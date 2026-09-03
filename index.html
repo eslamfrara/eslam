@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
+<title>Eslam Frara — High-Impact Product Ads & Commercials</title>
+<meta name="description" content="High-converting product ads, kinetic video commercials, and cinema-grade visuals engineered to stop the scroll and scale DTC ecommerce brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Bricolage+Grotesque:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  /* ==================== DESIGN TOKENS & RESET ==================== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; color-scheme: dark; }
+  
+  :root {
+    --bg-void: #040711;
+    --bg-surface: #090E1F;
+    --bg-surface-raised: #0F172E;
+    --bg-card: rgba(15, 23, 46, 0.7);
+    --bg-card-hover: rgba(22, 34, 68, 0.85);
+    
+    --primary: #38BDF8;
+    --primary-glow: rgba(56, 189, 248, 0.28);
+    --accent: #6366F1;
+    --accent-purple: #A855F7;
+    --emerald: #10B981;
+    
+    --text-pure: #FFFFFF;
+    --text-main: #F1F5F9;
+    --text-muted: #94A3B8;
+    --text-dim: #64748B;
+    
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-bright: rgba(56, 189, 248, 0.35);
+    --border-card: rgba(255, 255, 255, 0.12);
+    
+    --font-heading: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-arabic: 'Cairo', sans-serif;
+    
+    --container: 1200px;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+    --radius-pill: 9999px;
+    --shadow-glow: 0 0 50px -10px rgba(56, 189, 248, 0.3);
+  }
+
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.18), transparent 70%),
+      linear-gradient(to bottom, transparent, var(--bg-void) 90%);
+  }
+
+  /* RTL Support */
+  [dir="rtl"] body {
+    font-family: var(--font-arabic);
+  }
+  [dir="rtl"] .font-mono {
+    font-family: var(--font-arabic);
+    letter-spacing: 0;
+  }
+
+  /* Micro Grid Overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  img, video { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+  .text-gradient {
+    background: linear-gradient(135deg, #FFFFFF 30%, var(--primary) 75%, var(--accent-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-sky { color: var(--primary); }
+
+  /* Ambient Glows */
+  .glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .glow-1 { top: 10%; right: -5%; width: 500px; height: 500px; background: rgba(99, 102, 241, 0.15); }
+  .glow-2 { top: 50%; left: -10%; width: 600px; height: 600px; background: rgba(56, 189, 248, 0.12); }
+
+  /* ==================== BADGES & BUTTONS ==================== */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 16px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 2px;
+    background: var(--primary);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: var(--radius-pill);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    position: relative;
+  }
+  [dir="rtl"] .btn { font-family: var(--font-arabic); }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+
+  [dir="rtl"] .btn-arrow-icon {
+    transform: rotate(180deg);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, #0284C7 100%);
+    color: #040711;
+    box-shadow: 0 4px 20px -2px rgba(56, 189, 248, 0.4);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(56, 189, 248, 0.6);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-card);
+    color: var(--text-pure);
+    backdrop-filter: blur(10px);
+  }
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .btn-small { padding: 9px 18px; font-size: 13px; }
+
+  /* Language Switcher Pill */
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-pill);
+    padding: 3px;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+  .lang-btn {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+  }
+  .lang-btn.active {
+    background: var(--primary);
+    color: #040711;
+    box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
+  }
+
+  /* ==================== HEADER ==================== */
+  .site-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+  }
+  .site-header.is-scrolled {
+    padding: 12px 0;
+    background: rgba(4, 7, 17, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .brand-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 28px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    padding: 6px 20px;
+    border-radius: var(--radius-pill);
+    backdrop-filter: blur(10px);
+  }
+  .nav-links a {
+    font-size: 13.5px; font-weight: 600; color: var(--text-muted);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text-pure); }
+  @media(max-width: 860px) { .nav-links { display: none; } }
+
+  /* ==================== HERO ==================== */
+  .hero {
+    padding: 160px 0 90px;
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 4.5vw, 60px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    word-wrap: break-word;
+  }
+  [dir="rtl"] .hero-title {
+    font-family: var(--font-arabic);
+    line-height: 1.25;
+    letter-spacing: normal;
+  }
+  .hero-sub {
+    font-size: clamp(15.5px, 1.2vw, 19px);
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 36px;
+    max-width: 540px;
+  }
+  .hero-actions {
+    display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;
+  }
+  .hero-guarantee {
+    display: flex; align-items: center; gap: 20px;
+    font-size: 13px; color: var(--text-dim); flex-wrap: wrap;
+  }
+  .hero-guarantee span { display: inline-flex; align-items: center; gap: 6px; }
+
+  /* Signature Media Frame */
+  .media-frame {
+    position: relative;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-card);
+    background: radial-gradient(circle at center, #101935 0%, #070B1A 100%);
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.8);
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .frame-corner {
+    position: absolute; width: 14px; height: 14px;
+    border: 2px solid var(--primary);
+    z-index: 5; pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .frame-corner.tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+  .frame-corner.tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+  .frame-corner.bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+  .frame-corner.br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+  .hero-visual { aspect-ratio: 16/11; width: 100%; }
+  .media-fill {
+    width: 100%; height: 100%; object-fit: cover;
+    opacity: 0; transition: opacity 0.6s ease;
+  }
+  .media-frame.is-loaded .media-fill { opacity: 1; }
+  .media-frame.is-loaded .media-placeholder { display: none; }
+
+  .media-placeholder {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; padding: 24px; text-align: center;
+    background: repeating-conic-gradient(#0c132c 0% 25%, #131d42 0% 50%) 50% / 32px 32px;
+  }
+  .media-placeholder svg { width: 32px; height: 32px; color: var(--text-dim); }
+  .placeholder-label {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);
+    word-break: break-all;
+  }
+
+  .hud-tag {
+    position: absolute; z-index: 6;
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--primary); background: rgba(4, 7, 17, 0.75);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 4px 10px; border-radius: 4px;
+    backdrop-filter: blur(8px);
+  }
+  .hud-top-right { top: 16px; right: 16px; }
+  [dir="rtl"] .hud-top-right { right: auto; left: 16px; }
+
+  /* ==================== METRICS / KPI GRID ==================== */
+  .metrics-section { padding: 60px 0 80px; }
+  .metrics-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-md);
+    padding: 28px 24px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s;
+  }
+  .metric-card:hover { transform: translateY(-4px); border-color: var(--primary); }
+  .metric-num {
+    font-family: var(--font-heading);
+    font-size: clamp(20px, 3.2vw, 32px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    word-break: break-word;
+    letter-spacing: -0.01em;
+  }
+  [dir="rtl"] .metric-num { font-family: var(--font-arabic); }
+  .metric-label { font-size: 14px; font-weight: 600; color: var(--text-pure); margin-bottom: 4px; }
+  .metric-desc { font-size: 12.5px; color: var(--text-dim); }
+
+  /* ==================== SECTION SHARED ==================== */
+  .section-header {
+    text-align: center; max-width: 680px; margin: 0 auto 50px;
+  }
+  .section-header h2 {
+    font-family: var(--font-heading); font-size: clamp(26px, 3.8vw, 44px);
+    font-weight: 800; line-height: 1.2; margin-bottom: 14px;
+  }
+  [dir="rtl"] .section-header h2 { font-family: var(--font-arabic); }
+  .section-header p { font-size: 16.5px; color: var(--text-muted); }
+
+  /* ==================== SOLUTIONS ==================== */
+  .solutions-section { padding: 80px 0; }
+  .solutions-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .solution-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    transition: all 0.3s ease;
+  }
+  .solution-card:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+    transform: translateY(-4px);
+  }
+  .solution-icon {
+    width: 46px; height: 46px; border-radius: 12px;
+    background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--primary); margin-bottom: 20px;
+  }
+  .solution-icon svg { width: 22px; height: 22px; }
+  .solution-title { font-family: var(--font-heading); font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+  [dir="rtl"] .solution-title { font-family: var(--font-arabic); }
+  .solution-desc { color: var(--text-muted); font-size: 14.5px; line-height: 1.6; }
+
+  /* ==================== PORTFOLIO SHOWCASE ==================== */
+  .portfolio-section { padding: 80px 0; }
+  .filter-bar {
+    display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-size: 13px; font-weight: 600; padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    background: var(--bg-surface-raised);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    transition: all 0.2s;
+  }
+  [dir="rtl"] .filter-btn { font-family: var(--font-arabic); }
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--primary); color: #040711; border-color: var(--primary);
+  }
+
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  }
+  .portfolio-card {
+    aspect-ratio: 4/5;
+    cursor: pointer;
+  }
+  .portfolio-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-glow); }
+  .portfolio-card:hover .frame-corner { opacity: 1; }
+  .portfolio-card .frame-corner { opacity: 0; }
+  .card-overlay {
+    position: absolute; inset: auto 0 0 0;
+    padding: 20px 16px;
+    background: linear-gradient(to top, rgba(4, 7, 17, 0.95) 10%, rgba(4, 7, 17, 0) 100%);
+    z-index: 6;
+  }
+  .card-tag {
+    font-family: var(--font-mono); font-size: 10px; text-transform: uppercase;
+    color: var(--primary); letter-spacing: 0.1em; margin-bottom: 4px; display: block;
+  }
+  [dir="rtl"] .card-tag { font-family: var(--font-arabic); letter-spacing: normal; }
+  .card-title { font-family: var(--font-heading); font-size: 15px; font-weight: 700; }
+  [dir="rtl"] .card-title { font-family: var(--font-arabic); }
+
+  /* ==================== WHY TOP BRANDS WIN ==================== */
+  .why-section { padding: 80px 0; }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .why-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 36px 28px;
+    position: relative;
+  }
+  .why-stat {
+    font-family: var(--font-heading); font-size: 32px; font-weight: 800;
+    color: var(--primary); margin-bottom: 12px;
+  }
+  [dir="rtl"] .why-stat { font-family: var(--font-arabic); }
+  .why-title { font-family: var(--font-heading); font-size: 19px; font-weight: 700; margin-bottom: 8px; }
+  [dir="rtl"] .why-title { font-family: var(--font-arabic); }
+  .why-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ==================== ABOUT ME ==================== */
+  .about-section { padding: 80px 0; }
+  .about-inner {
+    display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 50px; align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+  }
+  .about-image-frame {
+    aspect-ratio: 1/1; max-width: 380px; width: 100%; margin: 0 auto;
+  }
+  .about-content h2 {
+    font-family: var(--font-heading); font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 800; margin-bottom: 18px;
+  }
+  [dir="rtl"] .about-content h2 { font-family: var(--font-arabic); }
+  .about-content p { color: var(--text-muted); font-size: 16px; margin-bottom: 16px; }
+  .about-content p:last-of-type { margin-bottom: 24px; }
+
+  /* ==================== PROCESS PIPELINE ==================== */
+  .process-section { padding: 80px 0; }
+  .process-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  }
+  .process-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 30px 22px;
+  }
+  .process-step {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+    color: var(--primary); margin-bottom: 12px;
+  }
+  [dir="rtl"] .process-step { font-family: var(--font-arabic); }
+  .process-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  [dir="rtl"] .process-title { font-family: var(--font-arabic); }
+  .process-desc { font-size: 13.5px; color: var(--text-muted); line-height: 1.55; }
+
+  /* ==================== FAQ ACCORDION ==================== */
+  .faq-section { padding: 80px 0; max-width: 800px; margin: 0 auto; }
+  .faq-list { display: flex; flex-direction: column; gap: 14px; margin-top: 40px; }
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .faq-item:hover { border-color: rgba(56, 189, 248, 0.3); }
+  .faq-question {
+    width: 100%; text-align: left; padding: 22px 24px;
+    font-family: var(--font-heading); font-size: 17px; font-weight: 600;
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--text-pure); gap: 12px;
+  }
+  [dir="rtl"] .faq-question { text-align: right; font-family: var(--font-arabic); }
+  .faq-question svg { width: 18px; height: 18px; transition: transform 0.3s; color: var(--primary); flex-shrink: 0; }
+  .faq-item.is-open .faq-question svg { transform: rotate(180deg); }
+  .faq-answer {
+    padding: 0 24px 22px; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;
+    display: none;
+  }
+  .faq-item.is-open .faq-answer { display: block; }
+
+  /* ==================== CTA BANNER ==================== */
+  .cta-section {
+    padding: 90px 24px;
+    margin: 50px auto 40px;
+    max-width: var(--container);
+    border-radius: var(--radius-lg);
+    background: radial-gradient(circle at 50% 0%, #172859 0%, #060B1C 80%);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 80px -20px rgba(56, 189, 248, 0.2);
+  }
+  .cta-content { max-width: 640px; margin: 0 auto; }
+  .cta-title {
+    font-family: var(--font-heading); font-size: clamp(28px, 4.2vw, 48px);
+    font-weight: 800; line-height: 1.2; margin-bottom: 18px;
+  }
+  [dir="rtl"] .cta-title { font-family: var(--font-arabic); }
+  .cta-sub { font-size: 16.5px; color: var(--text-muted); margin-bottom: 36px; }
+  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ==================== FOOTER ==================== */
+  .site-footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 70px 0 40px;
+    background: #02040A;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr repeat(2, 1fr); gap: 40px;
+    margin-bottom: 50px;
+  }
+  .footer-brand p { font-size: 14px; color: var(--text-dim); margin-top: 12px; max-width: 320px; }
+  .footer-col h4 {
+    font-family: var(--font-heading); font-size: 14px; font-weight: 700;
+    margin-bottom: 18px; color: var(--text-pure);
+  }
+  [dir="rtl"] .footer-col h4 { font-family: var(--font-arabic); }
+  .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { font-size: 13px; color: var(--text-muted); transition: color 0.2s; }
+  .footer-col a:hover { color: var(--primary); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 30px;
+    font-size: 12px; color: var(--text-dim); font-family: var(--font-mono);
+  }
+  [dir="rtl"] .footer-bottom { font-family: var(--font-arabic); }
+
+  /* ==================== FULL MOBILE & TABLET RESPONSIVENESS ==================== */
+  @media(max-width: 1024px) {
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media(max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 130px 0 60px; }
+    .hero-visual { aspect-ratio: 16/10; }
+  }
+
+  @media(max-width: 900px) {
+    .solutions-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media(max-width: 860px) {
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-inner { grid-template-columns: 1fr; padding: 36px 24px; gap: 32px; }
+    .about-image-frame { max-width: 280px; }
+  }
+
+  @media(max-width: 768px) {
+    .hero { padding: 115px 0 50px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+  }
+
+  @media(max-width: 580px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .portfolio-card { aspect-ratio: 16/11; }
+  }
+
+  @media(max-width: 520px) {
+    .process-grid { grid-template-columns: 1fr; }
+    .metrics-grid { grid-template-columns: 1fr; }
+    .metric-card { padding: 22px 20px; }
+  }
+
+  @media(max-width: 480px) {
+    .container { padding: 0 16px; }
+    .brand-logo { font-size: 17px; }
+    .btn-small { padding: 8px 12px; font-size: 12px; }
+    .lang-btn { padding: 3px 8px; font-size: 11px; }
+    .hero-actions { flex-direction: column; width: 100%; }
+    .hero-actions .btn { width: 100%; }
+    .cta-actions { flex-direction: column; width: 100%; }
+    .cta-actions .btn { width: 100%; }
+    .hero-guarantee { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .cta-section { padding: 50px 18px; margin: 30px auto; border-radius: var(--radius-md); }
+    .about-inner { padding: 26px 18px; }
+    .faq-question { font-size: 15.5px; padding: 18px 16px; }
+    .faq-answer { padding: 0 16px 18px; font-size: 14px; }
+    .filter-bar { gap: 6px; }
+    .filter-btn { padding: 7px 14px; font-size: 12px; }
+  }
+
+  /* Reveal Animations */
+  [data-reveal] { opacity: 1; }
+  .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  .js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG ICON SYSTEM -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  </symbol>
+  <symbol id="icon-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="23 7 16 12 23 17 23 7"/>
+    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+  </symbol>
+  <symbol id="icon-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+    <circle cx="8.5" cy="8.5" r="1.5"/>
+    <polyline points="21 15 16 10 5 21"/>
+  </symbol>
+  <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/>
+  </symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="5" y1="12" x2="19" y2="12"/>
+    <polyline points="12 5 19 12 12 19"/>
+  </symbol>
+  <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"/>
+  </symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+  </symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+  </symbol>
+  <symbol id="icon-person" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="7" r="4"/>
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+  </symbol>
+</svg>
+
+<!-- Ambient Glow Orbs -->
+<div class="glow-orb glow-1"></div>
+<div class="glow-orb glow-2"></div>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header" id="header">
+  <div class="container header-inner">
+    <a href="#top" class="brand-logo">
+      <span>ESLAM<span class="text-sky">FRARA</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
+      <a href="#work" data-i18n="nav_showcase">Showcase</a>
+      <a href="#why" data-i18n="nav_edge">The Edge</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#pipeline" data-i18n="nav_pipeline">Pipeline</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:12px;">
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" id="btn-lang-ar" onclick="setLanguage('ar')">عربي</button>
+      </div>
+
+      <a href="#contact" class="btn btn-primary btn-small">
+        <span data-i18n="nav_cta">Get in Touch</span>
+        <svg class="btn-arrow-icon"><use href="#icon-arrow-right"></use></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1 class="hero-title" data-i18n="hero_title">
+          Product Ads Designed <span class="text-gradient">to Capture Attention</span> Build Desire & Drive Sales
+        </h1>
+
+        <p class="hero-sub" data-i18n="hero_sub">
+          From the first frame to the final moment, every visual is crafted to make your product look desirable, communicate its value fast, and turn attention into action.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            <svg><use href="#icon-bolt"></use></svg>
+            <span data-i18n="hero_btn_primary">Book Ad Consultation</span>
+          </a>
+          <a href="#work" class="btn btn-secondary">
+            <span data-i18n="hero_btn_secondary">Explore Showcase</span>
+          </a>
+        </div>
+
+        <div class="hero-guarantee">
+          <span><svg style="width:16px;height:16px;color:var(--emerald);"><use href="#icon-check"></use></svg> <span data-i18n="hero_g1">Fast Turnaround</span></span>
+          <span><svg style="width:16px;height:16px;color:var(--emerald);"><use href="#icon-check"></use></svg> <span data-i18n="hero_g2">High ROAS Focus</span></span>
+        </div>
+      </div>
+
+      <!-- Hero Visual Slot -->
+      <div class="hero-visual media-frame" data-reveal>
+        <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+        <video class="media-fill" muted loop playsinline autoplay preload="metadata"
+          onloadeddata="this.closest('.media-frame').classList.add('is-loaded')">
+          <source src="assest/videos/reel-01.webm" type="video/webm">
+        </video>
+        <div class="media-placeholder">
+          <svg><use href="#icon-play"></use></svg>
+          <p class="placeholder-label">assest/videos/reel-01.webm</p>
+          <span style="font-size:11px;color:var(--text-dim);" data-i18n="hero_reel_label">Ad Reel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== METRICS ==================== -->
+  <section class="metrics-section">
+    <div class="container metrics-grid">
+      <div class="metric-card" data-reveal>
+        <div class="metric-num text-sky">PRODUCT FIRST</div>
+        <div class="metric-label" data-i18n="metric_1_title">Average ROAS Boost</div>
+        <div class="metric-desc" data-i18n="metric_1_desc">Across Meta & TikTok ad campaigns.</div>
+      </div>
+      <div class="metric-card" data-reveal>
+        <div class="metric-num text-pure">CINEMATIC QUALITY</div>
+        <div class="metric-label" data-i18n="metric_2_title">Ad Assets Created</div>
+        <div class="metric-desc" data-i18n="metric_2_desc">High-converting commercials & hero stills.</div>
+      </div>
+      <div class="metric-card" data-reveal>
+        <div class="metric-num text-sky" data-i18n="metric_3_val">&lt; 5 Days</div>
+        <div class="metric-label" data-i18n="metric_3_title">Fast Delivery</div>
+        <div class="metric-desc" data-i18n="metric_3_desc">From initial concept to final ad export.</div>
+      </div>
+      <div class="metric-card" data-reveal>
+        <div class="metric-num text-pure">PERFORMANCE DRIVEN</div>
+        <div class="metric-label" data-i18n="metric_4_title">Approval Rate</div>
+        <div class="metric-desc" data-i18n="metric_4_desc">Crafted precisely to your brand guidelines.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SOLUTIONS ==================== -->
+  <section class="solutions-section" id="solutions">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow" data-i18n="solutions_eyebrow">What We Deliver</p>
+        <h2 data-i18n="solutions_title">Everything Your Brand Needs to Convert</h2>
+        <p data-i18n="solutions_sub">Clean, high-impact creative solutions built for growth.</p>
+      </div>
+
+      <div class="solutions-grid">
+        <div class="solution-card" data-reveal>
+          <div class="solution-icon"><svg><use href="#icon-video"></use></svg></div>
+          <h3 class="solution-title" data-i18n="sol_1_title">Kinetic Video Ads</h3>
+          <p class="solution-desc" data-i18n="sol_1_desc">High-energy, hook-driven video ads crafted for Meta, TikTok, and YouTube Shorts to maximize scroll-stop rates.</p>
+        </div>
+
+        <div class="solution-card" data-reveal>
+          <div class="solution-icon"><svg><use href="#icon-image"></use></svg></div>
+          <h3 class="solution-title" data-i18n="sol_2_title">Studio Product Imagery</h3>
+          <p class="solution-desc" data-i18n="sol_2_desc">Flawless, razor-sharp hero shots and packaging visuals built for high-converting Shopify and Amazon product pages.</p>
+        </div>
+
+        <div class="solution-card" data-reveal>
+          <div class="solution-icon"><svg><use href="#icon-sparkles"></use></svg></div>
+          <h3 class="solution-title" data-i18n="sol_3_title">Omnichannel Ad Suites</h3>
+          <p class="solution-desc" data-i18n="sol_3_desc">Complete multi-ratio asset packages (9:16 Story/Reel, 1:1 Feed, 16:9 Banner) ready for immediate media spend.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PORTFOLIO SHOWCASE (4 VIDEOS + 4 IMAGES) ==================== -->
+  <section class="portfolio-section" id="work">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow" data-i18n="showcase_eyebrow">Selected Work</p>
+        <h2 data-i18n="showcase_title">Recent Commercial Deployments</h2>
+        <p data-i18n="showcase_sub">Explore our recent video commercials and high-converting product imagery.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All Work (8)</button>
+        <button class="filter-btn" data-filter="video" data-i18n="filter_video">Video Ads (4)</button>
+        <button class="filter-btn" data-filter="image" data-i18n="filter_image">Product Imagery (4)</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Item 1: Image -->
+        <article class="portfolio-card media-frame" data-reveal data-type="image">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <span class="hud-tag hud-top-right" data-i18n="tag_hero_still">HERO STILL</span>
+          <img class="media-fill" src="assest/images/product-01.webp" alt="Serum bottle product visual" loading="lazy"
+            onload="this.closest('.media-frame').classList.add('is-loaded')">
+          <div class="media-placeholder">
+            <svg><use href="#icon-image"></use></svg>
+            <p class="placeholder-label">assest/images/product-01.webp</p>
+          </div>
+          <div class="card-overlay">
+            <span class="card-tag" data-i18n="card_1_tag">CAMERA // DYNAMIC</span>
+            <h3 class="card-title" data-i18n="card_1_title">Insta360 X5 — HERO SHOT</h3>
+          </div>
+        </article>
+
+        <!-- Item 2: Video -->
+        <article class="portfolio-card media-frame" data-reveal data-video data-type="video">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <span class="hud-tag hud-top-right" data-i18n="tag_motion_ad">MOTION AD</span>
+          <video class="media-fill" muted loop playsinline preload="metadata"
+            onloadeddata="this.closest('.media-frame').classList.add('is-loaded')">
+            <source src="assest/videos/reel-02.webm" type="video/webm">
+          </video>
+          <div class="media-placeholder">
+            <svg><use href="#icon-play"></use></svg>
+            <p class="placeholder-label">assest/videos/reel-02.webm</p>
+          </div>
+          <div class="card-overlay">
+            <span class="card-tag" data-i18n="card_2_tag">Insta360 X5 // Dynamic Camera Ad</span>
+            <h3 class="card-title" data-i18n="card_2_title">Insta360 X5 — Dynamic Camera Ad</h3>
+          </div>
+        </article>
+
+        <!-- Item 3: Image -->
+        <article class="portfolio-card media-frame" data-reveal data-type="image">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <span class="hud-tag hud-top-right" data-i18n="tag_packaging">PACKAGING</span>
+          <img class="media-fill" src="assest/images/product-02.webp" alt="Coffee bag product visual" loading="lazy"
+            onload="this.closest('.media-frame').classList.add('is-loaded')">
+          <div class="media-placeholder">
+            <svg><use href="#icon-image"></use></svg>
+            <p class="placeholder-label">assest/images/product-02.webp</p>
+          </div>
+          <div class="card-overlay">
+            <span class="card-tag" data-i18n="card_3_tag">BEAUTY // COMMERCIAL</span>
+            <h3 class="card-title" data-i18n="card_3_title">Estée Lauder — HERO SHOT</h3>
+          </div>
+        </article>
+
+        <!-- Item 4: Video -->
+        <article class="portfolio-card media-frame" data-reveal data-video data-type="video">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <span class="hud-tag hud-top-right" data-i18n="tag_motion_ad">MOTION AD</span>
+          <video class="media-fill" muted loop playsinline preload="metadata"
+            onloadeddata="this.closest('.media-frame').classList.add('is-loaded')">
+            <source src="assest/videos/reel-03.webm" type="video/webm">
+          </video>
+          <div class="media-placeholder">
+            <svg><use href="#icon-play"></use></svg>
+            <p class="placeholder-label">assest/videos/reel-03.webm</p>
+          </div>
+          <div class="card-overlay">
+            <span class="card-tag" data-i18n="card_4_tag">Luxury // Commercial</span>
+            <h3 class="card-title" data-i18n="card_4_title">Estée Lauder — Skincare Commercial</h3>
+          </div>
+        </article>
+
+        <!-- Item 5: Image -->
+        <article class="portfolio-card media-frame" data-reveal data-type="image">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <span class="hud-tag hud-top-right" data-i18n="tag_studio_shot">STUDIO SHOT</span>
+          <img class="media-fill" src="assest/images/product-03.webp" alt="Sunglasses product visual" loading="lazy"
+            onload="this.closest('.media-frame').classList.add('is-loaded')">
+          <div class="media-placeholder">
+            <svg><use href="#icon-image"></use></svg>
+            <p class="placeholder-label">assest/images/product-03.webp</p>
+          </div>
+          <div class="card-overlay">
+            <span class="card-tag" data-i18n="card_5_tag">BEVERAGE // HERO VISUAL</span>
+            <h3 class="card-title" data-i18n="card_5_title">Frara3D — HERO SHOT</h3>
+          </div>
+        </article>
+
+        <!-- Item 6: Video -->
+        <article class="portfolio-card media-frame" data-reveal data-video data-type="video">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <span class="hud-tag hud-top-right" data-i18n="tag_motion_ad">MOTION AD</span>
+          <video class="media-fill" muted loop playsinline preload="metadata"
+            onloadeddata="this.closest('.media-frame').classList.add('is-loaded')">
+            <source src="assest/videos/reel-04.webm" type="video/webm">
+          </video>
+          <div class="media-placeholder">
+            <svg><use href="#icon-play"></use></svg>
+            <p class="placeholder-label">assest/videos/reel-04.webm</p>
+          </div>
+          <div class="card-overlay">
+            <span class="card-tag" data-i18n="card_6_tag">Frara3D // Commercial</span>
+            <h3 class="card-title" data-i18n="card_6_title">Frara3D — Cinematic Beverage Ad</h3>
+          </div>
+        </article>
+
+        <!-- Item 7: Image -->
+        <article class="portfolio-card media-frame" data-reveal data-type="image">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <span class="hud-tag hud-top-right" data-i18n="tag_hero_still">HERO STILL</span>
+          <img class="media-fill" src="assest/images/product-04.webp" alt="Wireless earbuds product visual" loading="lazy"
+            onload="this.closest('.media-frame').classList.add('is-loaded')">
+          <div class="media-placeholder">
+            <svg><use href="#icon-image"></use></svg>
+            <p class="placeholder-label">assest/images/product-04.webp</p>
+          </div>
+          <div class="card-overlay">
+            <span class="card-tag" data-i18n="card_7_tag">ACTION // FREEFALL</span>
+            <h3 class="card-title" data-i18n="card_7_title">Skydiving — Freefall</h3>
+          </div>
+        </article>
+
+        <!-- Item 8: Video -->
+        <article class="portfolio-card media-frame" data-reveal data-video data-type="video">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <span class="hud-tag hud-top-right" data-i18n="tag_motion_ad">MOTION AD</span>
+          <video class="media-fill" muted loop playsinline preload="metadata"
+            onloadeddata="this.closest('.media-frame').classList.add('is-loaded')">
+            <source src="assest/videos/reel-05.webm" type="video/webm">
+          </video>
+          <div class="media-placeholder">
+            <svg><use href="#icon-play"></use></svg>
+            <p class="placeholder-label">assest/videos/reel-05.webm</p>
+          </div>
+          <div class="card-overlay">
+            <span class="card-tag" data-i18n="card_8_tag">VFX // Commercial</span>
+            <h3 class="card-title" data-i18n="card_8_title">Skincare Set Motion Video</h3>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY TOP BRANDS WIN ==================== -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow" data-i18n="why_eyebrow">The Competitive Edge</p>
+        <h2 data-i18n="why_title">How Premium Brands Outperform the Market</h2>
+        <p data-i18n="why_sub">Top-tier DTC brands don't rely on basic camera snaps. They use engineered visual ads to dominate ad auctions.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card" data-reveal>
+          <div class="why-stat" data-i18n="why_1_stat">1.5s</div>
+          <h3 class="why-title" data-i18n="why_1_title">Instant Hook Power</h3>
+          <p class="why-desc" data-i18n="why_1_desc">Over 80% of ad spend is wasted if the first second fails to capture the eye. We engineer visual hooks that stop scrolling immediately.</p>
+        </div>
+
+        <div class="why-card" data-reveal>
+          <div class="why-stat" data-i18n="why_2_stat">3x</div>
+          <h3 class="why-title" data-i18n="why_2_title">Higher Perceived Value</h3>
+          <p class="why-desc" data-i18n="why_2_desc">Premium product visuals justify higher price points, build immediate brand authority, and turn casual visitors into loyal buyers.</p>
+        </div>
+
+        <div class="why-card" data-reveal>
+          <div class="why-stat" data-i18n="why_3_stat">0</div>
+          <h3 class="why-title" data-i18n="why_3_title">Zero Logistics Drag</h3>
+          <p class="why-desc" data-i18n="why_3_desc">No studio rentals, no damaged samples, and no waiting weeks for photographers. We move directly from concept to high-velocity delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ME ==================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-inner" data-reveal>
+        <div class="about-image-frame media-frame">
+          <div class="frame-corner tl"></div><div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div><div class="frame-corner br"></div>
+          <img class="media-fill" src="assest/images/profile.webp" alt="Eslam Frara portrait" loading="lazy"
+            onload="this.closest('.media-frame').classList.add('is-loaded')">
+          <div class="media-placeholder">
+            <svg><use href="#icon-person"></use></svg>
+            <p class="placeholder-label">assest/images/profile.webp</p>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <p class="eyebrow" data-i18n="about_eyebrow">Creative Direction</p>
+          <h2 data-i18n="about_title">Hi, I'm Eslam Frara</h2>
+          <p data-i18n="about_p1">I help ecommerce brands transform simple products into high-impact, scroll-stopping video commercials and luxury visual assets.</p>
+          <p data-i18n="about_p2">My entire focus is on two things: making your product look unmistakably premium, and creating ads that drive measurable revenue for your business.</p>
+          <a href="#contact" class="btn btn-primary btn-small">
+            <span data-i18n="about_btn">Let's Build Your Next Ad</span>
+            <svg class="btn-arrow-icon"><use href="#icon-arrow-right"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4-STEP PIPELINE ==================== -->
+  <section class="process-section" id="pipeline">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow" data-i18n="pipe_eyebrow">Production Roadmap</p>
+        <h2 data-i18n="pipe_title">A Streamlined, High-Speed Pipeline</h2>
+        <p data-i18n="pipe_sub">From your initial product idea to a high-converting ad ready to scale.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card" data-reveal>
+          <div class="process-step" data-i18n="pipe_step_1">STEP 01</div>
+          <h3 class="process-title" data-i18n="pipe_1_title">Idea & Vision Ingestion</h3>
+          <p class="process-desc" data-i18n="pipe_1_desc">We review your product, brand goals, target customer, and campaign objectives to establish the creative direction.</p>
+        </div>
+
+        <div class="process-card" data-reveal>
+          <div class="process-step" data-i18n="pipe_step_2">STEP 02</div>
+          <h3 class="process-title" data-i18n="pipe_2_title">Hook & Story Architecture</h3>
+          <p class="process-desc" data-i18n="pipe_2_desc">We develop attention-grabbing visual hooks, dynamic pacing, and storyboard concepts built specifically to convert.</p>
+        </div>
+
+        <div class="process-card" data-reveal>
+          <div class="process-step" data-i18n="pipe_step_3">STEP 03</div>
+          <h3 class="process-title" data-i18n="pipe_3_title">High-End Ad Production</h3>
+          <p class="process-desc" data-i18n="pipe_3_desc">The real magic happens. We build the visuals, lighting, motion, and sound design to create a broadcast-level ad.</p>
+        </div>
+
+        <div class="process-card" data-reveal>
+          <div class="process-step" data-i18n="pipe_step_4">STEP 04</div>
+          <h3 class="process-title" data-i18n="pipe_4_title">Delivery & Launch</h3>
+          <p class="process-desc" data-i18n="pipe_4_desc">Your final videos and imagery are delivered right on deadline in all platform aspect ratios, ready to scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ACCORDION ==================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <p class="eyebrow" data-i18n="faq_eyebrow">Got Questions?</p>
+        <h2 data-i18n="faq_title">Frequently Answered</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item" data-reveal>
+          <button class="faq-question">
+            <span data-i18n="faq_q1">What do you need from me to get started?</span>
+            <svg><use href="#icon-chevron-down"></use></svg>
+          </button>
+          <div class="faq-answer" data-i18n="faq_a1">
+            Just your product details, label or logo files, and reference photos. We take care of everything else from creative storyboarding to final video rendering.
+          </div>
+        </div>
+
+        <div class="faq-item" data-reveal>
+          <button class="faq-question">
+            <span data-i18n="faq_q2">How fast is the turnaround time?</span>
+            <svg><use href="#icon-chevron-down"></use></svg>
+          </button>
+          <div class="faq-answer" data-i18n="faq_a2">
+            Most ad campaigns and visual suites are completed in 3 to 5 business days, ensuring your marketing schedule stays right on track.
+          </div>
+        </div>
+
+        <div class="faq-item" data-reveal>
+          <button class="faq-question">
+            <span data-i18n="faq_q3">Do you deliver in vertical format for TikTok and Reels?</span>
+            <svg><use href="#icon-chevron-down"></use></svg>
+          </button>
+          <div class="faq-answer" data-i18n="faq_a3">
+            Yes! Every ad package is formatted for all major placements: 9:16 (TikTok, Reels, Shorts), 1:1 (Square Feed), and 16:9 (Landscape) with custom sound design included.
+          </div>
+        </div>
+
+        <div class="faq-item" data-reveal>
+          <button class="faq-question">
+            <span data-i18n="faq_q4">Can we request revisions if needed?</span>
+            <svg><use href="#icon-chevron-down"></use></svg>
+          </button>
+          <div class="faq-answer" data-i18n="faq_a4">
+            Absolutely. Every project includes structured review rounds so we can fine-tune pacing, camera motions, and details until it perfectly matches your vision.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA BANNER ==================== -->
+  <section class="cta-section container" id="contact" data-reveal>
+    <div class="cta-content">
+      <p class="eyebrow" style="justify-content:center;" data-i18n="cta_eyebrow">Direct Collaboration</p>
+      <h2 class="cta-title" data-i18n="cta_title">Ready to Launch Your Next Winning Ad?</h2>
+      <p class="cta-sub" data-i18n="cta_sub">Let's discuss your product. Reach out via Email or WhatsApp for a fast turnaround quote.</p>
+      <div class="cta-actions">
+        <a href="mailto:fraraeslam06@gmail.com" class="btn btn-primary">
+          <svg><use href="#icon-mail"></use></svg>
+          <span data-i18n="cta_btn_mail">Send an Email</span>
+        </a>
+        <a href="https://wa.me/2180930119123" class="btn btn-secondary" target="_blank" rel="noopener">
+          <svg><use href="#icon-whatsapp"></use></svg>
+          <span data-i18n="cta_btn_wa">Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="brand-logo">
+        <div class="logo-icon-box"><svg style="width:18px;height:18px;"><use href="#icon-video"></use></svg></div>
+        <span>ESLAM<span class="text-sky">FRARA</span></span>
+      </a>
+      <p data-i18n="footer_desc">High-converting product video ads, commercials, and hero visuals engineered for ambitious ecommerce brands worldwide.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="footer_nav_title">Navigation</h4>
+      <ul>
+        <li><a href="#solutions" data-i18n="nav_solutions">Solutions</a></li>
+        <li><a href="#work" data-i18n="nav_showcase">Showcase</a></li>
+        <li><a href="#why" data-i18n="nav_edge">The Edge</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#pipeline" data-i18n="nav_pipeline">Pipeline</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="footer_contact_title">Get in Touch</h4>
+      <ul>
+        <li><a href="mailto:fraraeslam06@gmail.com">fraraeslam06@gmail.com</a></li>
+        <li><a href="https://wa.me/2180930119123" target="_blank" rel="noopener" data-i18n="footer_wa_chat">WhatsApp Chat</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p data-i18n="footer_copy">© 2026 Eslam Frara. All rights reserved.</p>
+    <p data-i18n="footer_tagline">Engineered for high-performing ecommerce brands.</p>
+  </div>
+</footer>
+
+<!-- ==================== JAVASCRIPT & I18N SYSTEM ==================== -->
+<script>
+  // 1. Bilingual Dictionary (English & Arabic)
+  const translations = {
+    en: {
+      nav_solutions: "Services",
+      nav_showcase: "Work",
+      nav_edge: " The Difference",
+      nav_about: "About",
+      nav_pipeline: "Process",
+      nav_faq: "FAQ",
+      nav_cta: " START A PROJECT ",
+      
+      hero_title: 'Product Ads Designed <span class="text-gradient">to Capture Attention</span> Build Desire & Drive Sales',
+      hero_sub: "From the first frame to the final moment, every visual is crafted to make your product look desirable, communicate its value fast, and turn attention into action.",
+      hero_btn_primary: "Start Your Ad",
+      hero_btn_secondary: "See Our Work",
+      hero_g1: "Fast Turnaround",
+      hero_g2: "Performance-Focused",
+      hero_reel_label: "Live Cinema Ad Reel",
+      
+      metric_1_title: "Product-first creative",
+      metric_1_desc: "Built around what makes your product worth choosing.",
+      metric_2_title: "Cinematic-quality visuals",
+      metric_2_desc: "Polished from the first frame to the final detail.",
+      metric_3_val: "FAST DELIVERY",
+      metric_3_title: "Fast efficient delivery",
+      metric_3_desc: "A clear process designed to keep projects moving.",
+      metric_4_title: "Built for performance",
+      metric_4_desc: "Creative shaped around the goal behind every campaign.",
+      
+      solutions_eyebrow: "WHAT WE CREATE",
+      solutions_title: "Creative for Every Stage of Your Product",
+      solutions_sub: "From launches to ongoing campaigns, built around your product.",
+      sol_1_title: "PRODUCT LAUNCHES",
+      sol_1_desc: "Launch Campaigns From launch films to supporting creatives, we build the visual foundation for bringing a new product to market.",
+      sol_2_title: "PAID ADVERTISING",
+      sol_2_desc: "Performance Creatives Purpose-built ad variations designed to give your paid campaigns more creative angles to test and scale.",
+      sol_3_title: "BRAND CONTENT",
+      sol_3_desc: "Brand Visuals Consistent product content created for websites, social media, campaigns, and ongoing brand communication.",
+      
+      showcase_eyebrow: "Selected Work",
+      showcase_title: "Recent Work",
+      showcase_sub: "A selection of product campaigns and commercials created for brands.",
+      filter_all: "All Work (8)",
+      filter_video: "Video Ads (4)",
+      filter_image: "Product Imagery (4)",
+      
+      tag_hero_still: "HERO STILL",
+      tag_motion_ad: "MOTION AD",
+      tag_packaging: "PACKAGING",
+      tag_studio_shot: "STUDIO SHOT",
+      
+      card_1_tag: " CAMERA //  DYNAMIC",
+      card_1_title: "Insta360 X5 — HERO SHOT",
+      card_2_tag: "Insta360 X5 // Dynamic Camera Ad",
+      card_2_title: "Insta360 X5 — Dynamic Camera Ad",
+      card_3_tag: "BEAUTY // COMMERCIAL",
+      card_3_title: "Estée Lauder — HERO SHOT",
+      card_4_tag: "Luxury // Commercial",
+      card_4_title: "Estée Lauder — Skincare Commercial",
+      card_5_tag: "BEVERAGE // HERO VISUAL",
+      card_5_title: "Frara3D — HERO SHOT",
+      card_6_tag: "Frara3D // Commercial",
+      card_6_title: "Frara3D — Cinematic Beverage Ad",
+      card_7_tag: "ACTION // FREEFALL",
+      card_7_title: "Skydiving — Freefall",
+      card_8_tag: "VFX // Commercial",
+      card_8_title: "Skincare Set Motion Video",
+      
+      why_eyebrow: "THE DIFFERENCE",
+      why_title: "Why Great Products Need Great Creative",
+      why_sub: "Premium brands treat creative as part of the product experience — not just another ad.",
+      why_1_stat: "PERCEPTION",
+      why_1_title: "Perception Shapes Value",
+      why_1_desc: "The way a product is presented influences how people perceive its quality, positioning, and value.",
+      why_2_stat: "CLARITY",
+      why_2_title: "Make the Product Clear",
+      why_2_desc: "Strong creative communicates what matters quickly, without forcing the viewer to figure it out.",
+      why_3_stat: "CONSISTENCY",
+      why_3_title: "Consistency Builds Brands",
+      why_3_desc: "A consistent visual language helps every campaign feel like part of the same brand.",
+      
+      about_eyebrow: "Creative Direction",
+      about_title: "Hi, I'm Eslam Frara",
+      about_p1: "I work with brands to turn their products into clear, considered visual stories — from the first concept to the final commercial.",
+      about_p2: "My approach is simple: understand the product, find what makes it worth choosing, and build the creative around that idea.",
+      about_btn: "LET’S WORK TOGETHER",
+      
+      pipe_eyebrow: "Production Roadmap",
+      pipe_title: "From Concept to Final Cut",
+      pipe_sub: "A clear creative process, from the first idea to the finished campaign.",
+      pipe_step_1: "STEP 01",
+      pipe_1_title: "DISCOVER",
+      pipe_1_desc: "Define the Direction We start by understanding your product, audience, positioning, and the goal behind the campaign.",
+      pipe_step_2: "STEP 02",
+      pipe_2_title: "DEVELOP",
+      pipe_2_desc: "Shape the Concept We develop the creative direction, visual language, and story around what makes the product worth choosing.",
+      pipe_step_3: "STEP 03",
+      pipe_3_title: "PRODUCE",
+      pipe_3_desc: "Bring It to Life The approved concept is turned into the final visual content with careful attention to detail and execution.",
+      pipe_step_4: "STEP 04",
+      pipe_4_title: "DELIVER",
+      pipe_4_desc: "Ready to Launch You receive polished, platform-ready creative prepared for your campaign and chosen formats.",
+      
+      faq_eyebrow: "COMMON QUESTIONS",
+      faq_title: "Everything You Need to Know",
+      faq_q1: "What do you need from me to get started?",
+      faq_a1: "A clear brief, your product details, brand guidelines, and any references you want us to consider. If you don’t have everything ready, we can shape the direction together.",
+      faq_q2: "What types of projects do you work on?",
+      faq_a2: "We create product commercials, launch campaigns, performance creatives, and visual content for ecommerce and consumer brands.",
+      faq_q3: "How long does a project take?",
+      faq_a3: "Timelines depend on the scope and complexity of the project. Once we understand your requirements, you’ll receive a clear production timeline before we begin.",
+      faq_q4: "Can you work with an existing campaign or concept?",
+      faq_a4: "Absolutely. We can develop a project from the ground up or work from an existing concept, campaign direction, or creative brief.",
+      
+      cta_eyebrow: "LET’S WORK TOGETHER",
+      cta_title: "Have a Product Worth Showing?",
+      cta_sub: "Tell us about your product, and let’s find the right creative direction for it.",
+      cta_btn_mail: "Send an Email",
+      cta_btn_wa: "Chat on WhatsApp",
+      
+      footer_desc: "Product advertising and visual content created for brands that care about how they show up.",
+      footer_nav_title: "Navigation",
+      footer_contact_title: "START A PROJECT",
+      footer_wa_chat: "WhatsApp Chat",
+      footer_copy: "© 2026 Eslam Frara. All rights reserved.",
+      footer_tagline: "Engineered for high-performing ecommerce brands."
+    },
+    ar: {
+      nav_solutions: "الخدمات",
+      nav_showcase: "الأعمال",
+      nav_edge: "الفرق ",
+      nav_about: "من أنا",
+      nav_pipeline: "طريقة العمل",
+      nav_faq: "الأسئلة الشائعة",
+      nav_cta: "ابدأ مشروعًا",
+      
+      hero_title: 'إعلانات منتجات <span class="text-gradient">مصممة لجذب الانتباه </span> وبناء الرغبة ودفع المبيعات',
+      hero_sub: "من الإطار الأول إلى اللحظة الأخيرة، نصمم كل مشهد ليجعل منتجك أكثر جاذبية، ويوصل قيمته بسرعة، ويحوّل الانتباه إلى تفاعل حقيقي.",
+      hero_btn_primary: "ابدأ إعلانك",
+      hero_btn_secondary: "شاهد أعمالنا ",
+      hero_g1: "تسليم سريع ومرن",
+      hero_g2: " تركيز على الأداء",
+      hero_reel_label: "عرض الإعلانات السينمائي",
+      
+      metric_1_title: "إبداع يضع المنتج في المقدمة ",
+      metric_1_desc: "مبني حول ما يجعل منتجك جديرًا بالاختيار.",
+      metric_2_title: "جودة بصرية سينمائية",
+      metric_2_desc: "مبني حول ما يجعل منتجك جديرًا بالاختيار.",
+      metric_3_val: "تسليم سريع",
+      metric_3_title: "تنفيذ سريع وفعّال",
+      metric_3_desc: "عملية واضحة مصممة للحفاظ على سير المشروع بسلاسة.",
+      metric_4_title: "مصمم لتحقيق الأداء",
+      metric_4_desc: "إبداع مبني حول الهدف الحقيقي لك.",
+      
+      solutions_eyebrow: "ما نصنعه",
+      solutions_title: "إبداع لكل مرحلة من مراحل منتجك",
+      solutions_sub: "من الإطلاقات إلى الحملات المستمرة، مصمم حول منتجك.",
+      sol_1_title: "حملات إطلاق المنتجات",
+      sol_1_desc: "من الإعلان الرئيسي إلى المحتوى الداعم، نبني الأساس البصري لإطلاق منتج جديد في السوق.",
+      sol_2_title: "الإعلانات المدفوع",
+      sol_2_desc: "محتوى إعلاني للأداء نسخ إعلانية متعددة مصممة لمنح حملاتك المدفوعة زوايا إبداعية مختلفة للاختبار والتوسع.",
+      sol_3_title: "محتوى العلامة التجارية",
+      sol_3_desc: "المحتوى البصري للعلامة التجارية محتوى بصري متناسق للمنتجات، مصمم للمواقع ووسائل التواصل والحملات والتواصل المستمر مع الجمهور.",
+      
+      showcase_eyebrow: "أعمال مختارة",
+      showcase_title: "أحدث أعمالنا",
+      showcase_sub: "مجموعة مختارة من حملات المنتجات والإعلانات التي صُممت للعلامات التجارية. والمحتوى البصري الذي صُمم للعلامات التجارية .",
+      filter_all: "جميع الأعمال (8)",
+      filter_video: "إعلانات الفيديو (4)",
+      filter_image: "صور المنتجات (4)",
+      
+      tag_hero_still: "لقطة رئيسية",
+      tag_motion_ad: "إعلان فيديو",
+      tag_packaging: "تصميم عبوة",
+      tag_studio_shot: "لقطة استوديو",
+      
+      card_1_tag: "عناية بالبشرة // لقطة رئيسية",
+      card_1_title: "فرارا 3D — إعلان مشروب سينمائي",
+      card_2_tag: "أحذية // إعلان حركي",
+      card_2_title: "Insta360 X5 — إعلان كاميرا ديناميكي",
+      card_3_tag: "أغذية ومشروبات // تغليف",
+      card_3_title: "Estée Lauder — إعلان عناية بالبشرة",
+      card_4_tag: "منتجات فاخرة // إعلان سينمائي",
+      card_4_title: "القفز الحر — سقوط حر",
+      card_5_tag: "بصريات // صفحة المنتج",
+      card_5_title: "مؤثرات بصرية — جهاز البصمة",
+      card_6_tag: "عطور // إعلان سينمائي",
+      card_6_title: "عطر فاخر — إعلان سينمائي ساحر",
+      card_7_tag: "إلكترونيات // لقطة تقنية",
+      card_7_title: "سماعات لاسلكية — لقطة رئيسية حديثة",
+      card_8_tag: "تجميل // إعلان فيديو",
+      card_8_title: "مجموعة العناية بالبشرة — فيديو إعلاني",
+      
+      why_eyebrow: "الفرق",
+      why_title: "لماذا تحتاج المنتجات الرائعة إلى إبداع يليق بها",
+      why_sub: "العلامات التجارية المتميزة تتعامل مع المحتوى الإعلاني كجزء من تجربة المنتج، وليس مجرد إعلان آخر.",
+      why_1_stat: "الانطباع",
+      why_1_title: "لانطباع يصنع القيمة",
+      why_1_desc: "طريقة تقديم المنتج تؤثر في نظرة الجمهور إلى جودته، ومكانته، وقيمته.",
+      why_2_stat: "الوضوح",
+      why_2_title: "اجعل المنتج واضحًا",
+      why_2_desc: "الإبداع القوي يوصل ما يهم بسرعة، دون أن يضطر المشاهد إلى اكتشاف الرسالة بنفسه.",
+      why_3_stat: " التناسق",
+      why_3_title: "التناسق يبني العلامات التجارية",
+      why_3_desc: "لغة بصرية متناسقة تجعل كل حملة تبدو جزءًا من العلامة التجارية نفسها.",
+      
+      about_eyebrow: "التوجيه الإبداع",
+      about_title: "مرحباً، أنا إسلام فرارة",
+      about_p1: "أعمل مع العلامات التجارية لتحويل منتجاتها إلى قصص بصرية واضحة ومدروسة — من الفكرة الأولى حتى الإعلان النهائي.",
+      about_p2: "نهجي بسيط: أفهم المنتج، أحدد ما يجعله جديرًا بالاختيار، ثم أبني الفكرة الإبداعية حول ذلك.",
+      about_btn: "لنعمل معًا",
+      
+      pipe_eyebrow: "خارطة الإنتاج",
+      pipe_title: "من الفكرة إلى النسخة النهائية",
+      pipe_sub: "عملية إبداعية واضحة، من الفكرة الأولى إلى الحملة المكتملة.",
+      pipe_step_1: "المرحلة 01",
+      pipe_1_title: " الاكتشاف",
+      pipe_1_desc: "تحديد الاتجاه نبدأ بفهم منتجك، جمهورك، مكانته، والهدف من الحملة.",
+      pipe_step_2: "المرحلة 02",
+      pipe_2_title: "التطوير",
+      pipe_2_desc: "بناء الفكرة نطوّر الاتجاه الإبداعي، واللغة البصرية، والقصة حول ما يجعل المنتج جديرًا بالاختيار.",
+      pipe_step_3: "المرحلة 03",
+      pipe_3_title: "التنفيذ",
+      pipe_3_desc: "تحويل الفكرة إلى واقع نحوّل الفكرة المعتمدة إلى المحتوى البصري النهائي مع الاهتمام بالتفاصيل وجودة التنفيذ.",
+      pipe_step_4: "المرحلة 04",
+      pipe_4_title: " التسليم",
+      pipe_4_desc: "جاهز للإطلاق تحصل على محتوى نهائي مصقول وجاهز للاستخدام في حملتك وبالصيغ المطلوبة.",
+      
+      faq_eyebrow: "أسئلة شائعة",
+      faq_title: "كل ما تحتاج إلى معرفته",
+      faq_q1: "ماذا تحتاج مني للبدء؟",
+      faq_a1: "نحتاج إلى نبذة واضحة عن المشروع، تفاصيل المنتج، إرشادات العلامة التجارية، وأي مراجع تريد أن نأخذها بعين الاعتبار. وإذا لم يكن كل شيء جاهزًا، يمكننا تحديد الاتجاه معًا.",
+      faq_q2: "ما أنواع المشاريع التي تعمل عليها؟",
+      faq_a2: "نصمم إعلانات للمنتجات، وحملات إطلاق، ومحتوى إعلاني للأداء، ومحتوى بصري للعلامات التجارية في التجارة الإلكترونية والمنتجات الاستهلاكية.",
+      faq_q3: "كم يستغرق تنفيذ المشروع؟",
+      faq_a3: "تختلف المدة حسب حجم المشروع وتعقيده. بعد فهم متطلباتك، تحصل على جدول زمني واضح للإنتاج قبل أن نبدأ.",
+      faq_q4: "هل يمكنك العمل على حملة أو فكرة موجودة بالفعل؟",
+      faq_a4: "بالتأكيد. يمكننا تطوير المشروع من الصفر، أو العمل انطلاقًا من فكرة موجودة، أو اتجاه لحملة، أو تصور واضح لما تريده.",
+      
+      cta_eyebrow: "لنعمل معًا",
+      cta_title: "هل لديك منتج يستحق أن يُروى عنه؟",
+      cta_sub: "أخبرنا عن منتجك، ولنحدد الاتجاه الإبداعي المناسب له.",
+      cta_btn_mail: "إرسال بريد إلكتروني",
+      cta_btn_wa: "محادثة عبر واتساب",
+      
+      footer_desc: "إعلانات المنتجات والمحتوى البصري للعلامات التجارية التي تهتم بكيفية ظهورها.",
+      footer_nav_title: "التنقل",
+      footer_contact_title: "تواصل معي",
+      footer_wa_chat: "محادثة واتساب",
+      footer_copy: "© 2026 إسلام فرارة. جميع الحقوق محفوظة.",
+      footer_tagline: "مصممة لمتاجر التجارة الإلكترونية."
+    }
+  };
+
+  // 2. Language Switcher Engine
+  function setLanguage(lang) {
+    const isRTL = lang === 'ar';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+    
+    // Update active button state
+    document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-lang-ar').classList.toggle('active', lang === 'ar');
+    
+    // Update all translatable elements
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+    
+    // Save preference
+    localStorage.setItem('preferred_lang', lang);
+  }
+
+  // Load Saved Language on Start (Default is 'en')
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferred_lang') || 'en';
+    setLanguage(savedLang);
+  });
+
+  // 3. Header scroll effect
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 30);
+  }, { passive: true });
+
+  // 4. Intersection Observer for Scroll Reveals
+  const revealElements = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Video auto-playback trigger in viewport
+    const videoCards = document.querySelectorAll('[data-video]');
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target.querySelector('video');
+        if (!video) return;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+    videoCards.forEach(card => videoObserver.observe(card));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // 5. Hero Video Autoplay Assurance
+  const heroVideo = document.querySelector('.hero-visual video');
+  if (heroVideo) { heroVideo.play().catch(() => {}); }
+
+  // 6. Portfolio Filter System
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+      portfolioCards.forEach(card => {
+        const cardType = card.getAttribute('data-type');
+        if (filterValue === 'all' || filterValue === cardType) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // 7. Interactive FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      faqItems.forEach(i => i.classList.remove('is-open'));
+      if (!isOpen) {
+        item.classList.add('is-open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
